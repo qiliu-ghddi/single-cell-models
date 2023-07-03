@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="scgpt package" href="scgpt.html" />
-    <link rel="prev" title="Welcome to learn_scgpt’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Welcome to scformer’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,6 +46,20 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scgpt</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="scgpt.html">scgpt package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#scgpt-examples">scgpt_examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="finetune_integration.html">finetune_integration module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#scformer">scformer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scformer.html">scformer package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#scformer-examples">scformer_examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_integration_single_gpu.html">dev_integration_single_gpu module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_pancreas_wandb.html">dev_pancreas_wandb module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">test module</a></li>
 </ul>
 </li>
 </ul>
@@ -163,12 +177,94 @@
 </ul>
 </div>
 </section>
+<section id="scgpt-examples">
+<h1>scgpt_examples<a class="headerlink" href="#scgpt-examples" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="finetune_integration.html">finetune_integration module</a></li>
+</ul>
+</div>
+</section>
+<section id="scformer">
+<h1>scformer<a class="headerlink" href="#scformer" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scformer.html">scformer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scformer.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html">scformer.model package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#module-scformer.model.dsbn">scformer.model.dsbn module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#module-scformer.model.generation_model">scformer.model.generation_model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#module-scformer.model.grad_reverse">scformer.model.grad_reverse module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#module-scformer.model.model">scformer.model.model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#module-scformer.model">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.tokenizer.html">scformer.tokenizer package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#module-scformer.tokenizer.gene_tokenizer">scformer.tokenizer.gene_tokenizer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#module-scformer.tokenizer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html">scformer.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.utils.html#module-scformer.utils.util">scformer.utils.util module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.utils.html#module-scformer.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.html#module-scformer.data_collator">scformer.data_collator module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator"><code class="docutils literal notranslate"><span class="pre">DataCollator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.do_mlm"><code class="docutils literal notranslate"><span class="pre">DataCollator.do_mlm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.do_padding"><code class="docutils literal notranslate"><span class="pre">DataCollator.do_padding</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.keep_first_n_tokens"><code class="docutils literal notranslate"><span class="pre">DataCollator.keep_first_n_tokens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.mask_value"><code class="docutils literal notranslate"><span class="pre">DataCollator.mask_value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.max_length"><code class="docutils literal notranslate"><span class="pre">DataCollator.max_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.mlm_probability"><code class="docutils literal notranslate"><span class="pre">DataCollator.mlm_probability</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.pad_token_id"><code class="docutils literal notranslate"><span class="pre">DataCollator.pad_token_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.pad_value"><code class="docutils literal notranslate"><span class="pre">DataCollator.pad_value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.data_collator.DataCollator.sampling"><code class="docutils literal notranslate"><span class="pre">DataCollator.sampling</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.html#module-scformer.data_sampler">scformer.data_sampler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.html#scformer.data_sampler.SubsetSequentialSampler"><code class="docutils literal notranslate"><span class="pre">SubsetSequentialSampler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.html#scformer.data_sampler.SubsetsBatchSampler"><code class="docutils literal notranslate"><span class="pre">SubsetsBatchSampler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.html#module-scformer.preprocess">scformer.preprocess module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.html#scformer.preprocess.Preprocessor"><code class="docutils literal notranslate"><span class="pre">Preprocessor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.html#scformer.preprocess.Preprocessor.check_logged"><code class="docutils literal notranslate"><span class="pre">Preprocessor.check_logged()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.html#module-scformer.trainer">scformer.trainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.html#module-scformer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="scformer-examples">
+<h1>scformer_examples<a class="headerlink" href="#scformer-examples" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev_integration_single_gpu.html">dev_integration_single_gpu module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_pancreas_wandb.html">dev_pancreas_wandb module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">test module</a></li>
+</ul>
+</div>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to learn_scgpt’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to scformer’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="scgpt.html" class="btn btn-neutral float-right" title="scgpt package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

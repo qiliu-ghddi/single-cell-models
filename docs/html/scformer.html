@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scformer package &mdash; learn_scgpt v0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="scformer.model package" href="scformer.model.html" />
+    <link rel="prev" title="finetune_integration module" href="finetune_integration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            learn_scgpt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">scgpt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#scgpt-examples">scgpt_examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html#scformer">scformer</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">scformer package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html">scformer.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html">scformer.tokenizer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.utils.html">scformer.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-scformer.data_collator">scformer.data_collator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scformer.data_collator.DataCollator"><code class="docutils literal notranslate"><span class="pre">DataCollator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-scformer.data_sampler">scformer.data_sampler module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scformer.data_sampler.SubsetSequentialSampler"><code class="docutils literal notranslate"><span class="pre">SubsetSequentialSampler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scformer.data_sampler.SubsetsBatchSampler"><code class="docutils literal notranslate"><span class="pre">SubsetsBatchSampler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-scformer.preprocess">scformer.preprocess module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scformer.preprocess.Preprocessor"><code class="docutils literal notranslate"><span class="pre">Preprocessor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-scformer.trainer">scformer.trainer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-scformer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#scformer-examples">scformer_examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">learn_scgpt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">scgpt</a></li>
+      <li class="breadcrumb-item active">scformer package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/scformer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scformer-package">
+<h1>scformer package<a class="headerlink" href="#scformer-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scformer.model.html">scformer.model package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scformer.model.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.model.html#module-scformer.model.dsbn">scformer.model.dsbn module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.dsbn.DomainSpecificBatchNorm1d"><code class="docutils literal notranslate"><span class="pre">DomainSpecificBatchNorm1d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.dsbn.DomainSpecificBatchNorm1d.bn_handle"><code class="docutils literal notranslate"><span class="pre">DomainSpecificBatchNorm1d.bn_handle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.dsbn.DomainSpecificBatchNorm1d.training"><code class="docutils literal notranslate"><span class="pre">DomainSpecificBatchNorm1d.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.dsbn.DomainSpecificBatchNorm2d"><code class="docutils literal notranslate"><span class="pre">DomainSpecificBatchNorm2d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.dsbn.DomainSpecificBatchNorm2d.bn_handle"><code class="docutils literal notranslate"><span class="pre">DomainSpecificBatchNorm2d.bn_handle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.dsbn.DomainSpecificBatchNorm2d.training"><code class="docutils literal notranslate"><span class="pre">DomainSpecificBatchNorm2d.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.model.html#module-scformer.model.generation_model">scformer.model.generation_model module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.ClsDecoder"><code class="docutils literal notranslate"><span class="pre">ClsDecoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.ClsDecoder.forward"><code class="docutils literal notranslate"><span class="pre">ClsDecoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.ClsDecoder.training"><code class="docutils literal notranslate"><span class="pre">ClsDecoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.GeneEncoder"><code class="docutils literal notranslate"><span class="pre">GeneEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.GeneEncoder.forward"><code class="docutils literal notranslate"><span class="pre">GeneEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.GeneEncoder.training"><code class="docutils literal notranslate"><span class="pre">GeneEncoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.MVCDecoder"><code class="docutils literal notranslate"><span class="pre">MVCDecoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.MVCDecoder.forward"><code class="docutils literal notranslate"><span class="pre">MVCDecoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.MVCDecoder.training"><code class="docutils literal notranslate"><span class="pre">MVCDecoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.PositionalEncoding"><code class="docutils literal notranslate"><span class="pre">PositionalEncoding</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.PositionalEncoding.forward"><code class="docutils literal notranslate"><span class="pre">PositionalEncoding.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.PositionalEncoding.training"><code class="docutils literal notranslate"><span class="pre">PositionalEncoding.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.Similarity"><code class="docutils literal notranslate"><span class="pre">Similarity</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.Similarity.forward"><code class="docutils literal notranslate"><span class="pre">Similarity.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.Similarity.training"><code class="docutils literal notranslate"><span class="pre">Similarity.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.TransformerGenerator"><code class="docutils literal notranslate"><span class="pre">TransformerGenerator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.TransformerGenerator.encode_batch"><code class="docutils literal notranslate"><span class="pre">TransformerGenerator.encode_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.TransformerGenerator.forward"><code class="docutils literal notranslate"><span class="pre">TransformerGenerator.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.TransformerGenerator.init_weights"><code class="docutils literal notranslate"><span class="pre">TransformerGenerator.init_weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.TransformerGenerator.pred_perturb"><code class="docutils literal notranslate"><span class="pre">TransformerGenerator.pred_perturb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.TransformerGenerator.training"><code class="docutils literal notranslate"><span class="pre">TransformerGenerator.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.ValueEncoding"><code class="docutils literal notranslate"><span class="pre">ValueEncoding</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.ValueEncoding.forward"><code class="docutils literal notranslate"><span class="pre">ValueEncoding.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.ValueEncoding.training"><code class="docutils literal notranslate"><span class="pre">ValueEncoding.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.generation_model.generate_square_subsequent_mask"><code class="docutils literal notranslate"><span class="pre">generate_square_subsequent_mask()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.model.html#module-scformer.model.grad_reverse">scformer.model.grad_reverse module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.grad_reverse.GradReverse"><code class="docutils literal notranslate"><span class="pre">GradReverse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.grad_reverse.GradReverse.backward"><code class="docutils literal notranslate"><span class="pre">GradReverse.backward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.grad_reverse.GradReverse.forward"><code class="docutils literal notranslate"><span class="pre">GradReverse.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.grad_reverse.grad_reverse"><code class="docutils literal notranslate"><span class="pre">grad_reverse()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.model.html#module-scformer.model.model">scformer.model.model module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.AdversarialDiscriminator"><code class="docutils literal notranslate"><span class="pre">AdversarialDiscriminator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.AdversarialDiscriminator.forward"><code class="docutils literal notranslate"><span class="pre">AdversarialDiscriminator.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.AdversarialDiscriminator.training"><code class="docutils literal notranslate"><span class="pre">AdversarialDiscriminator.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.BatchLabelEncoder"><code class="docutils literal notranslate"><span class="pre">BatchLabelEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.BatchLabelEncoder.forward"><code class="docutils literal notranslate"><span class="pre">BatchLabelEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.BatchLabelEncoder.training"><code class="docutils literal notranslate"><span class="pre">BatchLabelEncoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.CategoryValueEncoder"><code class="docutils literal notranslate"><span class="pre">CategoryValueEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.CategoryValueEncoder.forward"><code class="docutils literal notranslate"><span class="pre">CategoryValueEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.CategoryValueEncoder.training"><code class="docutils literal notranslate"><span class="pre">CategoryValueEncoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.ClsDecoder"><code class="docutils literal notranslate"><span class="pre">ClsDecoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.ClsDecoder.forward"><code class="docutils literal notranslate"><span class="pre">ClsDecoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.ClsDecoder.training"><code class="docutils literal notranslate"><span class="pre">ClsDecoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.ContinuousValueEncoder"><code class="docutils literal notranslate"><span class="pre">ContinuousValueEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.ContinuousValueEncoder.forward"><code class="docutils literal notranslate"><span class="pre">ContinuousValueEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.ContinuousValueEncoder.training"><code class="docutils literal notranslate"><span class="pre">ContinuousValueEncoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.ExprDecoder"><code class="docutils literal notranslate"><span class="pre">ExprDecoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.ExprDecoder.forward"><code class="docutils literal notranslate"><span class="pre">ExprDecoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.ExprDecoder.training"><code class="docutils literal notranslate"><span class="pre">ExprDecoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.GeneEncoder"><code class="docutils literal notranslate"><span class="pre">GeneEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.GeneEncoder.forward"><code class="docutils literal notranslate"><span class="pre">GeneEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.GeneEncoder.training"><code class="docutils literal notranslate"><span class="pre">GeneEncoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.MVCDecoder"><code class="docutils literal notranslate"><span class="pre">MVCDecoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.MVCDecoder.forward"><code class="docutils literal notranslate"><span class="pre">MVCDecoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.MVCDecoder.training"><code class="docutils literal notranslate"><span class="pre">MVCDecoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.PositionalEncoding"><code class="docutils literal notranslate"><span class="pre">PositionalEncoding</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.PositionalEncoding.forward"><code class="docutils literal notranslate"><span class="pre">PositionalEncoding.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.PositionalEncoding.training"><code class="docutils literal notranslate"><span class="pre">PositionalEncoding.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.Similarity"><code class="docutils literal notranslate"><span class="pre">Similarity</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.Similarity.forward"><code class="docutils literal notranslate"><span class="pre">Similarity.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.Similarity.training"><code class="docutils literal notranslate"><span class="pre">Similarity.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.TransformerModel"><code class="docutils literal notranslate"><span class="pre">TransformerModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.TransformerModel.encode_batch"><code class="docutils literal notranslate"><span class="pre">TransformerModel.encode_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.TransformerModel.forward"><code class="docutils literal notranslate"><span class="pre">TransformerModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.TransformerModel.init_weights"><code class="docutils literal notranslate"><span class="pre">TransformerModel.init_weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.model.html#scformer.model.model.TransformerModel.training"><code class="docutils literal notranslate"><span class="pre">TransformerModel.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.model.html#scformer.model.model.generate_square_subsequent_mask"><code class="docutils literal notranslate"><span class="pre">generate_square_subsequent_mask()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.model.html#module-scformer.model">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scformer.tokenizer.html">scformer.tokenizer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scformer.tokenizer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.tokenizer.html#module-scformer.tokenizer.gene_tokenizer">scformer.tokenizer.gene_tokenizer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.GeneTokenizer"><code class="docutils literal notranslate"><span class="pre">GeneTokenizer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.GeneVocab"><code class="docutils literal notranslate"><span class="pre">GeneVocab</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.GeneVocab.from_dict"><code class="docutils literal notranslate"><span class="pre">GeneVocab.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.GeneVocab.from_file"><code class="docutils literal notranslate"><span class="pre">GeneVocab.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.GeneVocab.pad_token"><code class="docutils literal notranslate"><span class="pre">GeneVocab.pad_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.GeneVocab.save_json"><code class="docutils literal notranslate"><span class="pre">GeneVocab.save_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.GeneVocab.set_default_token"><code class="docutils literal notranslate"><span class="pre">GeneVocab.set_default_token()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.GeneVocab.training"><code class="docutils literal notranslate"><span class="pre">GeneVocab.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.get_default_gene_vocab"><code class="docutils literal notranslate"><span class="pre">get_default_gene_vocab()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.pad_batch"><code class="docutils literal notranslate"><span class="pre">pad_batch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.random_mask_value"><code class="docutils literal notranslate"><span class="pre">random_mask_value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.tokenize_and_pad_batch"><code class="docutils literal notranslate"><span class="pre">tokenize_and_pad_batch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.tokenizer.html#scformer.tokenizer.gene_tokenizer.tokenize_batch"><code class="docutils literal notranslate"><span class="pre">tokenize_batch()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.tokenizer.html#module-scformer.tokenizer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scformer.utils.html">scformer.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scformer.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.utils.html#module-scformer.utils.util">scformer.utils.util module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.add_file_handler"><code class="docutils literal notranslate"><span class="pre">add_file_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.category_str2int"><code class="docutils literal notranslate"><span class="pre">category_str2int()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.eval_scib_metrics"><code class="docutils literal notranslate"><span class="pre">eval_scib_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.find_required_colums"><code class="docutils literal notranslate"><span class="pre">find_required_colums()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.gene_vocabulary"><code class="docutils literal notranslate"><span class="pre">gene_vocabulary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.get_free_gpu"><code class="docutils literal notranslate"><span class="pre">get_free_gpu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.histogram"><code class="docutils literal notranslate"><span class="pre">histogram()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.isnotebook"><code class="docutils literal notranslate"><span class="pre">isnotebook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.set_seed"><code class="docutils literal notranslate"><span class="pre">set_seed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scformer.utils.html#scformer.utils.util.tensorlist2tensor"><code class="docutils literal notranslate"><span class="pre">tensorlist2tensor()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scformer.utils.html#module-scformer.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-scformer.data_collator">
+<span id="scformer-data-collator-module"></span><h2>scformer.data_collator module<a class="headerlink" href="#module-scformer.data_collator" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scformer.data_collator.</span></span><span class="sig-name descname"><span class="pre">DataCollator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">do_padding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_token_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_mlm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mlm_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_first_n_tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scformer/data_collator.html#DataCollator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scformer.data_collator.DataCollator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Data collator for the mask value learning task. It pads the sequences to
+the maximum length in the batch and masks the gene expression values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>do_padding</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – whether to pad the sequences to the max length.</p></li>
+<li><p><strong>pad_token_id</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – the token id to use for padding.
+This is required if do_padding is True.</p></li>
+<li><p><strong>pad_value</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – the value to use for padding the expression
+values to the max length.</p></li>
+<li><p><strong>do_mlm</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – whether to do masking with MLM.</p></li>
+<li><p><strong>mlm_probability</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – the probability of masking with MLM.</p></li>
+<li><p><strong>mask_value</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – the value to fill at the expression postions
+that are masked.</p></li>
+<li><p><strong>max_length</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – the maximum length of the sequences.
+This is required if do_padding is True.</p></li>
+<li><p><strong>sampling</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – whether to do sampling instead of truncation if
+length &gt; max_length.</p></li>
+<li><p><strong>keep_first_n_tokens</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – the number of tokens in the beginning
+of the sequence to keep unchanged from sampling. This is useful when
+special tokens have been added to the beginning of the sequence.
+Default to 1.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.do_mlm">
+<span class="sig-name descname"><span class="pre">do_mlm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.do_mlm" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.do_padding">
+<span class="sig-name descname"><span class="pre">do_padding</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.do_padding" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.keep_first_n_tokens">
+<span class="sig-name descname"><span class="pre">keep_first_n_tokens</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.keep_first_n_tokens" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.mask_value">
+<span class="sig-name descname"><span class="pre">mask_value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.mask_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.max_length">
+<span class="sig-name descname"><span class="pre">max_length</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.max_length" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.mlm_probability">
+<span class="sig-name descname"><span class="pre">mlm_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.15</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.mlm_probability" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.pad_token_id">
+<span class="sig-name descname"><span class="pre">pad_token_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.pad_token_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.pad_value">
+<span class="sig-name descname"><span class="pre">pad_value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.pad_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scformer.data_collator.DataCollator.sampling">
+<span class="sig-name descname"><span class="pre">sampling</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#scformer.data_collator.DataCollator.sampling" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-scformer.data_sampler">
+<span id="scformer-data-sampler-module"></span><h2>scformer.data_sampler module<a class="headerlink" href="#module-scformer.data_sampler" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="scformer.data_sampler.SubsetSequentialSampler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scformer.data_sampler.</span></span><span class="sig-name descname"><span class="pre">SubsetSequentialSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scformer/data_sampler.html#SubsetSequentialSampler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scformer.data_sampler.SubsetSequentialSampler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Sampler</span></code></p>
+<p>Samples elements sequentially from a given list of indices, without replacement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>indices</strong> (<em>sequence</em>) – a sequence of indices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scformer.data_sampler.SubsetsBatchSampler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scformer.data_sampler.</span></span><span class="sig-name descname"><span class="pre">SubsetsBatchSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subsets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intra_subset_shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inter_subset_shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_last</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scformer/data_sampler.html#SubsetsBatchSampler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scformer.data_sampler.SubsetsBatchSampler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Sampler</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</p>
+<p>Samples batches of indices from a list of subsets of indices. Each subset
+of indices represents a data subset and is sampled without replacement randomly
+or sequentially. Specially, each batch only contains indices from a single subset.
+This sampler is for the scenario where samples need to be drawn from multiple
+subsets separately.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subsets</strong> (<em>List</em><em>[</em><em>Sequence</em><em>[</em><em>int</em><em>]</em><em>]</em>) – A list of subsets of indices.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Size of mini-batch.</p></li>
+<li><p><strong>intra_subset_shuffle</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the sampler will shuffle the indices
+within each subset.</p></li>
+<li><p><strong>inter_subset_shuffle</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the sampler will shuffle the order
+of subsets.</p></li>
+<li><p><strong>drop_last</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the sampler will drop the last batch if
+its size would be less than <code class="docutils literal notranslate"><span class="pre">batch_size</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-scformer.preprocess">
+<span id="scformer-preprocess-module"></span><h2>scformer.preprocess module<a class="headerlink" href="#module-scformer.preprocess" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="scformer.preprocess.Preprocessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scformer.preprocess.</span></span><span class="sig-name descname"><span class="pre">Preprocessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_gene_by_counts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_cell_by_counts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_total</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_normed_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'X_normed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log1p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_log1p_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'X_log1p'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_hvg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hvg_use_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hvg_flavor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'seurat_v3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binning</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_binned_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'X_binned'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scformer/preprocess.html#Preprocessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scformer.preprocess.Preprocessor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Prepare data into training, valid and test split. Normalize raw expression
+values, binning or using other transform into the preset model input format.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scformer.preprocess.Preprocessor.check_logged">
+<span class="sig-name descname"><span class="pre">check_logged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnnData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/scformer/preprocess.html#Preprocessor.check_logged"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scformer.preprocess.Preprocessor.check_logged" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the data is already log1p transformed.</p>
+<p>Args:</p>
+<dl class="simple">
+<dt>adata (<code class="xref py py-class docutils literal notranslate"><span class="pre">AnnData</span></code>):</dt><dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">AnnData</span></code> object to preprocess.</p>
+</dd>
+<dt>obs_key (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, optional):</dt><dd><p>The key of <code class="xref py py-class docutils literal notranslate"><span class="pre">AnnData.obs</span></code> to use for batch information. This arg
+is used in the highly variable gene selection step.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-scformer.trainer">
+<span id="scformer-trainer-module"></span><h2>scformer.trainer module<a class="headerlink" href="#module-scformer.trainer" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-scformer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-scformer" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="finetune_integration.html" class="btn btn-neutral float-left" title="finetune_integration module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scformer.model.html" class="btn btn-neutral float-right" title="scformer.model package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, qiliu-ghddi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,10 +1,10 @@
-.. learn_scgpt documentation master file, created by
-   sphinx-quickstart on Thu Jun 29 13:37:20 2023.
+.. scformer documentation master file, created by
+   sphinx-quickstart on Mon Jul  3 14:33:13 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to learn_scgpt's documentation!
-=======================================
+Welcome to scformer's documentation!
+====================================
 
 .. toctree::
    :maxdepth: 2
